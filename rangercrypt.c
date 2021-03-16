@@ -89,7 +89,7 @@ int main(int argc, char** argv)
     fread(pkr, 1, 0xC, sav);
 	rewind(sav);
 
-	if((size == 0x40000 || size == 0x4007A) && !strcmp(pkr, pkr2))
+	if((size == 0x40000 || size == 0x4007A || size == 0x10000 || size == 0x1007A) && !strcmp(pkr, pkr2)) // Jap: 256kb, EU/US: 65kb
     {
         unsigned int *saveinfo = (unsigned int *)malloc(0x1F4);
         fseek(sav, 0xC, SEEK_SET);
